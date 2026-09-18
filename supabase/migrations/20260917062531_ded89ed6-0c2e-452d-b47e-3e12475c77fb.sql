@@ -1,0 +1,11 @@
+REVOKE EXECUTE ON FUNCTION public.assign_default_role() FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user() FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.handle_unwind_review() FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.sync_public_profile() FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.sync_vote_count() FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.register_participant(text, text, text, text, text, text, boolean) FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.registration_count() FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.register_participant(text, text, text, text, text, text, boolean) TO anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.registration_count() TO anon, authenticated;
